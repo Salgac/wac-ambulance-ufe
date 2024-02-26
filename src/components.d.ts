@@ -6,24 +6,84 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface XsalgovicAmbulanceWlApp {
+        "basePath": string;
+    }
+    interface XsalgovicAmbulanceWlEditor {
+        "entryId": string;
+    }
     interface XsalgovicAmbulanceWlList {
     }
 }
+export interface XsalgovicAmbulanceWlEditorCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLXsalgovicAmbulanceWlEditorElement;
+}
+export interface XsalgovicAmbulanceWlListCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLXsalgovicAmbulanceWlListElement;
+}
 declare global {
+    interface HTMLXsalgovicAmbulanceWlAppElement extends Components.XsalgovicAmbulanceWlApp, HTMLStencilElement {
+    }
+    var HTMLXsalgovicAmbulanceWlAppElement: {
+        prototype: HTMLXsalgovicAmbulanceWlAppElement;
+        new (): HTMLXsalgovicAmbulanceWlAppElement;
+    };
+    interface HTMLXsalgovicAmbulanceWlEditorElementEventMap {
+        "editor-closed": string;
+    }
+    interface HTMLXsalgovicAmbulanceWlEditorElement extends Components.XsalgovicAmbulanceWlEditor, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLXsalgovicAmbulanceWlEditorElementEventMap>(type: K, listener: (this: HTMLXsalgovicAmbulanceWlEditorElement, ev: XsalgovicAmbulanceWlEditorCustomEvent<HTMLXsalgovicAmbulanceWlEditorElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLXsalgovicAmbulanceWlEditorElementEventMap>(type: K, listener: (this: HTMLXsalgovicAmbulanceWlEditorElement, ev: XsalgovicAmbulanceWlEditorCustomEvent<HTMLXsalgovicAmbulanceWlEditorElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLXsalgovicAmbulanceWlEditorElement: {
+        prototype: HTMLXsalgovicAmbulanceWlEditorElement;
+        new (): HTMLXsalgovicAmbulanceWlEditorElement;
+    };
+    interface HTMLXsalgovicAmbulanceWlListElementEventMap {
+        "entry-clicked": string;
+    }
     interface HTMLXsalgovicAmbulanceWlListElement extends Components.XsalgovicAmbulanceWlList, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLXsalgovicAmbulanceWlListElementEventMap>(type: K, listener: (this: HTMLXsalgovicAmbulanceWlListElement, ev: XsalgovicAmbulanceWlListCustomEvent<HTMLXsalgovicAmbulanceWlListElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLXsalgovicAmbulanceWlListElementEventMap>(type: K, listener: (this: HTMLXsalgovicAmbulanceWlListElement, ev: XsalgovicAmbulanceWlListCustomEvent<HTMLXsalgovicAmbulanceWlListElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLXsalgovicAmbulanceWlListElement: {
         prototype: HTMLXsalgovicAmbulanceWlListElement;
         new (): HTMLXsalgovicAmbulanceWlListElement;
     };
     interface HTMLElementTagNameMap {
+        "xsalgovic-ambulance-wl-app": HTMLXsalgovicAmbulanceWlAppElement;
+        "xsalgovic-ambulance-wl-editor": HTMLXsalgovicAmbulanceWlEditorElement;
         "xsalgovic-ambulance-wl-list": HTMLXsalgovicAmbulanceWlListElement;
     }
 }
 declare namespace LocalJSX {
+    interface XsalgovicAmbulanceWlApp {
+        "basePath"?: string;
+    }
+    interface XsalgovicAmbulanceWlEditor {
+        "entryId"?: string;
+        "onEditor-closed"?: (event: XsalgovicAmbulanceWlEditorCustomEvent<string>) => void;
+    }
     interface XsalgovicAmbulanceWlList {
+        "onEntry-clicked"?: (event: XsalgovicAmbulanceWlListCustomEvent<string>) => void;
     }
     interface IntrinsicElements {
+        "xsalgovic-ambulance-wl-app": XsalgovicAmbulanceWlApp;
+        "xsalgovic-ambulance-wl-editor": XsalgovicAmbulanceWlEditor;
         "xsalgovic-ambulance-wl-list": XsalgovicAmbulanceWlList;
     }
 }
@@ -31,6 +91,8 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "xsalgovic-ambulance-wl-app": LocalJSX.XsalgovicAmbulanceWlApp & JSXBase.HTMLAttributes<HTMLXsalgovicAmbulanceWlAppElement>;
+            "xsalgovic-ambulance-wl-editor": LocalJSX.XsalgovicAmbulanceWlEditor & JSXBase.HTMLAttributes<HTMLXsalgovicAmbulanceWlEditorElement>;
             "xsalgovic-ambulance-wl-list": LocalJSX.XsalgovicAmbulanceWlList & JSXBase.HTMLAttributes<HTMLXsalgovicAmbulanceWlListElement>;
         }
     }
