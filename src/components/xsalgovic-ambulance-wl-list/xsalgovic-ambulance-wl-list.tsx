@@ -34,6 +34,14 @@ export class XsalgovicAmbulanceWlList {
         estimatedDurationMinutes: 15,
         condition: "Bolesti hrdla",
       },
+      {
+        name: "Ing. Juraj Trtkavý PhD.",
+        patientId: "10069",
+        since: new Date(Date.now() - 420 * 69).toISOString(),
+        estimatedStart: new Date(Date.now() + 420).toISOString(),
+        estimatedDurationMinutes: 69,
+        condition: "Zápal kosti od blbosti",
+      },
     ]);
   }
 
